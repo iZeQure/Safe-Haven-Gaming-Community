@@ -1,3 +1,12 @@
+html {
+  --scrollbar-background-color: #212529 !important;
+  --scrollbar-wheel-color: #6C757D !important;
+}
+
+body {
+  padding-top: 65px !important;
+}
+
 p {
     margin: 0 !important;
 }
@@ -42,6 +51,21 @@ table td {
     font-size: 16px !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
     color: #6C757D !important;
+    max-height: 100px !important;
+    overflow-y: auto !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--scrollbar-wheel-color) var(--scrollbar-background-color) !important;
+}
+
+.bio-section-content::-webkit-scrollbar {
+  width: 3px !important;
+}
+.bio-section-content::-webkit-scrollbar-track {
+  background: var(--scrollbar-background-color) !important;
+}
+.bio-section-content::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-wheel-color) !important;
+  border-radius: 5px !important;
 }
 
 .introduction-card-title {
@@ -116,5 +140,4 @@ table td {
     .card-deck .card {
       flex: 0 0 calc(33.3333333333% - 30px);
     }
-  }
-  
+  }  
