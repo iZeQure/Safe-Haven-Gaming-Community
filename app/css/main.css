@@ -79,7 +79,7 @@ table td {
 }
 
 .introduction-title-name {
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     font-size: 25px !important;
     font-weight: 900 !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
@@ -103,7 +103,7 @@ table td {
 }
 
 .text-information-size {
-    font-size: 15px !important;
+    font-size: 13px !important;
     font-weight: 600 !important;
     text-transform: uppercase !important;
 }

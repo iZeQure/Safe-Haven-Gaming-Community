@@ -3,7 +3,7 @@
 ?>
 
 <section id="content">
-
+    
 </section>
 
 <?php // Include Footer

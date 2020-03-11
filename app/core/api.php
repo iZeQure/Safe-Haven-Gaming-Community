@@ -5,7 +5,7 @@ $API_INTERFACE_NAME = 'ISteamUser/';
 $API_COLLECTION_NAME = 'GetPlayerSummaries/';
 $API_VERSION = 'v0002/';
 
-$steamdids = "76561198131831320,76561198438990924,76561197964411050,76561197978958958,76561198089285742";
+$steamdids = $_POST['steamId'];
 
 $request_url = $API_URL . $API_INTERFACE_NAME . $API_COLLECTION_NAME . $API_VERSION . '?key=' . $API_KEY . '&steamids=' . $steamdids;
 
@@ -21,12 +21,20 @@ $output = json_decode($players);
 
 $players = $output->response->players;
 
+echo count($players) === 0;
+if (count($players) == 0) {
+    header("Status: 404 No Profile Found.");
+    http_response_code(404);
+    return;
+}
+
 foreach($players as $player){
     // print_r($player->avatarmedium . "<br />");
-    echo("<img src='".$player->avatarmedium."'>");
-    echo("<p>" . $player->personaname . "</p>");
+    // echo("<img src='".$player->avatarmedium."'>");
+    // echo("<p>" . $player->personaname . "</p>");
 
-    if (isset($player->loccountrycode)) {
-        echo("<p>" . $player->loccountrycode . "</p>");
-    }
+    // if (isset($player->loccountrycode)) {
+        // echo("<p>" . $player->loccountrycode . "</p>");
+    // }
+    echo $player->personaname;
 }

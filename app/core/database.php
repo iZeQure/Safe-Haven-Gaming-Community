@@ -1,4 +1,8 @@
 <?php
+$dbhost = 'localhost';
+$dbuser = 'root';
+$dbpass = '';
+$dbname = 'db_safehaven';
 
 class db {
     protected $connection;
