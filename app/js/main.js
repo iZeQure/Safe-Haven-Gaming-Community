@@ -18,7 +18,6 @@ $(document).ready(function () {
 
 function getSteamAPIInfo() {
     var steamId = document.getElementById('steam-id');
-    console.info("Focus Lost");
 
     $.ajax({
         method: "POST",
@@ -28,12 +27,13 @@ function getSteamAPIInfo() {
         }
     })
     .done(function (response) {
+        var obj = JSON.parse(response);
+
         if (!response == "") {
-            $('#steamProfileHelp').html("Found Profile : " + response);
-            return;
+            $('#steamProfileHelp').html("Found Profile : " + obj.personaname);
         }
     })
-    .fail(function(error){
+    .fail(function() {
         $('#steamProfileHelp').html("No Profile Found");
         setTimeout(function() {
             $('#steamProfileHelp').html('Find your id <a class="" href="https://steamid.io/lookup" target="_blank" rel="noopener noreferrer">here.');

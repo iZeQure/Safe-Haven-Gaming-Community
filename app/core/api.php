@@ -21,7 +21,6 @@ $output = json_decode($players);
 
 $players = $output->response->players;
 
-echo count($players) === 0;
 if (count($players) == 0) {
     header("Status: 404 No Profile Found.");
     http_response_code(404);
@@ -36,5 +35,7 @@ foreach($players as $player){
     // if (isset($player->loccountrycode)) {
         // echo("<p>" . $player->loccountrycode . "</p>");
     // }
-    echo $player->personaname;
+    // echo $player->personaname;
+    // if (isset($player->loccountrycode)) echo $player->loccountrycode;
+    print_r(json_encode($player));
 }
